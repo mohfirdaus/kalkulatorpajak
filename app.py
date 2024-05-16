@@ -1,10 +1,4 @@
 import streamlit as st
-try:
-    from terbilang import Terbilang
-except ModuleNotFoundError:
-    import subprocess
-    subprocess.call(['pip', 'install', 'terbilang'])
-    from terbilang import Terbilang
 
 def hitung_gross_up(penghasilan_netto):
     TARIF_PAJAK = 0.05
@@ -17,10 +11,10 @@ def main():
     st.title('Kalkulator Penentuan Gross Up - Frilens')
     penghasilan_netto = int(st.number_input('Masukkan Penghasilan Netto:', min_value=0, step=5000))
 
-    t = Terbilang()
+    # t = Terbilang()
 
-    t.parse(str(penghasilan_netto))
-    st.write(t.getresult()+ ' rupiah')
+    # t.parse(str(penghasilan_netto))
+    # st.write(t.getresult()+ ' rupiah')
     
     if st.button('Hitung'):
         penghasilan_bruto_gross_up, dpp, pajak = hitung_gross_up(penghasilan_netto)
