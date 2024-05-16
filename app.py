@@ -1,5 +1,10 @@
 import streamlit as st
-from terbilang import Terbilang
+try:
+    from terbilang import Terbilang
+except ModuleNotFoundError:
+    import subprocess
+    subprocess.call(['pip', 'install', 'terbilang'])
+    from terbilang import Terbilang
 
 def hitung_gross_up(penghasilan_netto):
     TARIF_PAJAK = 0.05
