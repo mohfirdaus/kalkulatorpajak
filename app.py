@@ -11,8 +11,11 @@ def hitung_gross_up(penghasilan_netto):
 def main():
     st.title('Kalkulator Penentuan Gross Up - Frilens')
     penghasilan_netto = int(st.number_input('Masukkan Penghasilan Netto:', min_value=0, step=5000))
-    terbilang_netto = Terbilang().parse(penghasilan_netto)
-    st.write(f'Terbilang: {terbilang_netto.capitalize()}')
+
+    t = Terbilang()
+
+    t.parse(str(penghasilan_netto))
+    st.write(t.getresult()+ ' rupiah')
     
     if st.button('Hitung'):
         penghasilan_bruto_gross_up, dpp, pajak = hitung_gross_up(penghasilan_netto)
