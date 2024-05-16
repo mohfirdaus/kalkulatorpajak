@@ -5,7 +5,7 @@ def hitung_gross_up(penghasilan_netto):
     penghasilan_bruto_gross_up = penghasilan_netto / (1 - (0.5 * TARIF_PAJAK))
     dpp = penghasilan_bruto_gross_up * 0.5
     pajak = dpp * TARIF_PAJAK
-    return round(penghasilan_bruto_gross_up), round(dpp), round(pajak)
+    return int(penghasilan_bruto_gross_up), int(dpp), int(pajak)
 
 def main():
     st.title('Kalkulator Pajak')
