@@ -1,4 +1,5 @@
 import streamlit as st
+from terbilang import terbilang
 
 def hitung_gross_up(penghasilan_netto):
     TARIF_PAJAK = 0.05
