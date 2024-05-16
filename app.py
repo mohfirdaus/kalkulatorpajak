@@ -8,7 +8,7 @@ def hitung_gross_up(penghasilan_netto):
     return int(penghasilan_bruto_gross_up), int(dpp), int(pajak)
 
 def main():
-    st.title('Kalkulator Pajak')
+    st.title('Kalkulator Penentuan Gross Up - Frilens')
     penghasilan_netto = int(st.number_input('Masukkan Penghasilan Netto:', min_value=0, step=5000))
     if st.button('Hitung'):
         penghasilan_bruto_gross_up, dpp, pajak = hitung_gross_up(penghasilan_netto)
