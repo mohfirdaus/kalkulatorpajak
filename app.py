@@ -15,7 +15,7 @@ def main():
         st.write(f'Penghasilan Bruto Gross-Up: Rp{penghasilan_bruto_gross_up:,}')
         st.write(f'Dasar Pengenaan Pajak (DPP): Rp{dpp:,}')
         st.write(f'PPh 21: Rp{pajak:,}')
-        st.write(f'Jumlah Transfer: Rp{penghasilan_netto:,}')
+        st.write(f'Jumlah Transfer: Rp{int(penghasilan_netto):,}')
 
 if __name__ == '__main__':
     main()
