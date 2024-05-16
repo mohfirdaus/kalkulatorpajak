@@ -1,5 +1,5 @@
 import streamlit as st
-from terbilang import terbilang
+from terbilang import Terbilang
 
 def hitung_gross_up(penghasilan_netto):
     TARIF_PAJAK = 0.05
@@ -11,8 +11,8 @@ def hitung_gross_up(penghasilan_netto):
 def main():
     st.title('Kalkulator Penentuan Gross Up - Frilens')
     penghasilan_netto = int(st.number_input('Masukkan Penghasilan Netto:', min_value=0, step=5000))
-    terbilang_netto = terbilang(penghasilan_netto).capitalize()
-    st.write(f'Terbilang: {terbilang_netto}')
+    terbilang_netto = Terbilang().parse(penghasilan_netto)
+    st.write(f'Terbilang: {terbilang_netto.capitalize()}')
     
     if st.button('Hitung'):
         penghasilan_bruto_gross_up, dpp, pajak = hitung_gross_up(penghasilan_netto)
